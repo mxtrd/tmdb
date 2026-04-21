@@ -1,13 +1,17 @@
-.container {
-  border-bottom: 1px solid black;
-  padding-left: 100px;
+.header {
+  border-bottom: 1px solid var(--bg-elevated);
+  background: var(--bg-surface);
 }
  
 .list {
+  min-height: var(--header-height);
   display: flex;
+  align-items: center;
   gap: 40px;
 }
  
 .activeLink {
-  font-weight: bold;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 1;
 }

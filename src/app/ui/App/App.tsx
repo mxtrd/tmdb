@@ -1,12 +1,11 @@
-import { Header } from "@/common/components/Header/Header"
 import { Routing } from "@/common/routing"
+import { BaseLayout } from '@/app/ui/BaseLayout/BaseLayout'
 
 function App() {
   return (
-   <>
-    <Header />
-    <Routing />
-   </>
+    <BaseLayout>
+      <Routing />
+    </BaseLayout>
   )
 }
 
