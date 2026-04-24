@@ -46,3 +46,24 @@ Current initialized feature folders:
 - Create segments only when needed; do not generate empty folders preemptively.
 - Keep Redux/RTK logic close to its feature.
 - Prefer simple imports and clear ownership over strict architectural ceremony.
+
+## Component Props Convention
+
+To keep component signatures consistent across the codebase, use this props style:
+
+- Define props via a local `type Props = { ... }` (or `type <ComponentName>Props = { ... }` when helpful).
+- Declare component as `const Component = (props: Props) => { ... }`.
+- Destructure props inside the function body, not in the function parameter list.
+
+Example:
+
+```tsx
+type Props = {
+  value: string
+}
+
+export const Example = (props: Props) => {
+  const { value } = props
+  return <div>{value}</div>
+}
+```

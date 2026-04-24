@@ -7,7 +7,9 @@ type PageSeoProps = {
 
 const APP_NAME = 'TMDB Kinopoisk'
 
-export const PageSeo = ({ title, description }: PageSeoProps) => {
+export const PageSeo = (props: PageSeoProps) => {
+  const { title, description } = props
+
   return (
     <Helmet>
       <title>{`${title} | ${APP_NAME}`}</title>

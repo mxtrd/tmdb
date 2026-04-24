@@ -25,3 +25,7 @@ A test project for searching and browsing movies using the TMDB API.
 - Redux Toolkit (including RTK Query)
 - React Router
 - CSS Modules
+
+## Code Convention
+
+- Component props style: declare `type Props`, pass `props` as a single argument, and destructure inside the component body.
