@@ -1,6 +1,19 @@
 /* stylelint-disable */
 $browser-context: 16; // Default
 
+@mixin btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 @function rem($pixels, $context: $browser-context) {
   @return #{$pixels/$context}rem;
 }

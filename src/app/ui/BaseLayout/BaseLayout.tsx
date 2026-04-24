@@ -2,12 +2,16 @@ import type { PropsWithChildren } from 'react'
 import { Header } from '@/common/components'
 import { Footer } from '@/common/components'
 
-export const BaseLayout = ({ children }: PropsWithChildren) => {
+type Props = PropsWithChildren
+
+export const BaseLayout = (props: Props) => {
+  const { children } = props
+
   return (
     <>
       <Header />
       <div className="siteContainer">
-        <main className="main">{children}</main>
+        <main className="main" style={{paddingTop: '100px'}}>{children}</main>
       </div>
       <Footer />
     </>

@@ -1,0 +1,143 @@
+@use "../../../app/styles/mixins" as *;
+
+.container {
+  position: relative;
+  line-height: 0;
+}
+
+.trigger {
+  @include btn-reset;
+  display: inline-flex;
+  border-radius: 16px;
+  padding: 12px;
+  background: #1e1e1e;
+  transition: background 0.3s;
+
+  @include hover {
+    background: #2a2a2a;
+  }
+
+  &:active {
+    background: #333;
+  }
+}
+
+.triggerIcon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  color: #9d9d9d;
+  transition: color 0.3s;
+}
+
+.triggerIconActive {
+  &.themeLight {
+    color: #f2e14c;
+  }
+
+  &.themeDark {
+    color: #5c5eee;
+  }
+
+  &.themeSystem {
+    color: #f0f0f0;
+  }
+}
+
+.menu {
+  @include list-reset;
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 12px);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  padding: 16px;
+  width: 140px;
+  box-shadow: 4px 4px 20px 0 rgb(18 18 18 / 25%);
+  background: #1e1e1e;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+  gap: 8px;
+  translate: -50% 0;
+}
+
+.menuOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.option {
+  @include btn-reset;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 6px 8px;
+  width: 100%;
+  text-align: left;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  white-space: nowrap;
+  color: #9d9d9d;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+  cursor: pointer;
+
+  @include hover {
+    color: #f0f0f0;
+  }
+
+  &[aria-pressed='true'] {
+    color: #f0f0f0;
+  }
+}
+
+.optionIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: #9d9d9d;
+  transition: color 0.3s;
+}
+
+.optionActive {
+  color: #f0f0f0;
+
+  .optionIcon {
+    &.themeLight {
+      color: #f2e14c;
+    }
+
+    &.themeDark {
+      color: #5c5eee;
+    }
+
+    &.themeSystem {
+      color: #f0f0f0;
+    }
+  }
+}
+
+.option:hover .optionIcon,
+.option:focus-visible .optionIcon {
+  &.themeLight {
+    color: #f2e14c;
+  }
+
+  &.themeDark {
+    color: #5c5eee;
+  }
+
+  &.themeSystem {
+    color: #f0f0f0;
+  }
+}
