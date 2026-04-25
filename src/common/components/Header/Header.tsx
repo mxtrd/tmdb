@@ -1,5 +1,6 @@
 import { Path } from '@/common/routing/Path'
 import { NavLink } from 'react-router'
+import clsx from 'clsx'
 import { Burger } from '@/common/components/Burger/Burger'
 import { ThemeSelect } from '@/common/components/ThemeSelect/ThemeSelect'
 import { useHeaderMenu } from './useHeaderMenu'
@@ -34,13 +35,13 @@ export const Header = () => {
               height={20}
             />
           </NavLink>
-          <nav id="main-menu" ref={navRef} className={`${s.nav} ${isMenuOpen ? s.navVisible : ''}`}>
-            <ul className={`listReset ${s.list}`}>
+          <nav id="main-menu" ref={navRef} className={clsx(s.nav, isMenuOpen && s.navVisible)}>
+            <ul className={clsx('listReset', s.list)}>
               {navItems.map(item => (
                 <li key={item.to}>
                   <NavLink
                     to={item.to}
-                    className={({ isActive }) => `${s.link} ${isActive ? s.activeLink : ''}`}
+                    className={({ isActive }) => clsx(s.link, isActive && s.activeLink)}
                     onClick={closeMenu}
                   >
                     {item.label}

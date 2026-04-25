@@ -1,0 +1,78 @@
+@use "../../../app/styles/mixins" as *;
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include small-tablet {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  // @include mobile {
+  //   align-items: stretch;
+  // }
+}
+
+.field {
+  position: relative;
+}
+
+.input {
+  @include input-reset;
+  height: 46px;
+  width: 470px;
+  padding-inline: 12px 44px;
+  border: 1px solid var(--bg-elevated-active);
+  border-radius: 100px;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.3;
+
+  &:focus-visible {
+    border-radius: 100px;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.reset {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  color: var(--text-primary);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  translate: 0 -50%;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: currentcolor;
+  }
+}
+
+.resetVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button {
+  @include small-tablet {
+    align-self: flex-start;
+  }
+
+  @include mobile {
+    padding-block: 12px;
+    font-size: 16px;
+    align-self: stretch;
+  }
+}

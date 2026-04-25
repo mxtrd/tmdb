@@ -14,6 +14,21 @@ $browser-context: 16; // Default
   padding: 0;
 }
 
+@mixin input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
 @function rem($pixels, $context: $browser-context) {
   @return #{$pixels/$context}rem;
 }

@@ -19,6 +19,10 @@
     fill: currentcolor;
   }
 
+  &:focus-visible {
+    border-radius: 100px;
+  }
+
   @include hover {
     border-color: var(--accent-hover);
     color: #f0f0f0;

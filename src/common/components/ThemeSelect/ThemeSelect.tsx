@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react'
+import clsx from 'clsx'
 import { applyTheme, getStoredTheme, persistTheme, type ThemeMode } from '@/common/lib/theme'
 import s from './ThemeSelect.module.scss'
 
@@ -142,14 +143,17 @@ export const ThemeSelect = () => {
         aria-label="Select theme"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <ThemeIcon className={`${s.triggerIcon} ${getThemeColorClassName(theme)} ${s.triggerIconActive}`} theme={theme} />
+        <ThemeIcon
+          className={clsx(s.triggerIcon, getThemeColorClassName(theme), s.triggerIconActive)}
+          theme={theme}
+        />
         <span className="srOnly">{themeMeta[theme].label}</span>
       </button>
 
       <ul
         id={menuId}
         role="menu"
-        className={`${s.menu} ${isOpen ? s.menuOpen : ''}`}
+        className={clsx(s.menu, isOpen && s.menuOpen)}
       >
         {themeOptions.map((option) => (
           <li key={option.value}>
@@ -158,14 +162,14 @@ export const ThemeSelect = () => {
               role="menuitemradio"
               aria-checked={theme === option.value}
               aria-pressed={theme === option.value}
-              className={`${s.option} ${theme === option.value ? s.optionActive : ''}`}
+              className={clsx(s.option, theme === option.value && s.optionActive)}
               onClick={(event) => {
                 const isKeyboardActivation = event.detail === 0
                 onSelectTheme(option.value, !isKeyboardActivation)
               }}
             >
               <ThemeIcon
-                className={`${s.optionIcon} ${getThemeColorClassName(option.value)}`}
+                className={clsx(s.optionIcon, getThemeColorClassName(option.value))}
                 theme={option.value}
               />
               {option.label}
