@@ -9,10 +9,6 @@
     flex-direction: column;
     align-items: stretch;
   }
-
-  // @include mobile {
-  //   align-items: stretch;
-  // }
 }
 
 .field {
@@ -52,12 +48,13 @@
   transition: opacity 0.3s, visibility 0.3s;
   translate: 0 -50%;
 
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    fill: currentcolor;
-  }
+}
+
+.resetIcon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
 }
 
 .resetVisible {
