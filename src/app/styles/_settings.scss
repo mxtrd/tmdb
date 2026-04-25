@@ -123,6 +123,14 @@ a {
   }
 }
 
+.section-offset {
+  padding-bottom: 80px;
+
+  @include mobile {
+    padding-bottom: 60px;
+  }
+}
+
 :focus-visible {
   outline: 2px solid #4493f8;
   outline-offset: 3px;
