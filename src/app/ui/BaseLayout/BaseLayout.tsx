@@ -11,7 +11,7 @@ export const BaseLayout = (props: Props) => {
     <>
       <Header />
       <div className="siteContainer">
-        <main className="main" style={{paddingTop: '100px'}}>{children}</main>
+        <main className="main">{children}</main>
       </div>
       <Footer />
     </>
