@@ -1,4 +1,5 @@
 import type { KeyboardEventHandler, MouseEventHandler, Ref } from 'react'
+import clsx from 'clsx'
 import s from './Burger.module.scss'
 
 type Props = {
@@ -21,7 +22,7 @@ export const Burger = (props: Props) => {
   return (
     <button
       type="button"
-      className={`btnReset ${s.burger}`}
+      className={clsx('btnReset', s.burger)}
       data-burger
       ref={buttonRef}
       aria-label={isOpen ? 'Close menu' : 'Open menu'}
