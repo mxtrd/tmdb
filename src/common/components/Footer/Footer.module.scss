@@ -1,5 +1,15 @@
 .footer {
-  border-bottom: 1px solid var(--bg-elevated);
-  background: var(--bg-surface);
-  min-height: var(--header-height);
+  border-top: 1px solid var(--bg-elevated);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--gap) 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--text-secondary);
 }
