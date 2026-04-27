@@ -1,0 +1,26 @@
+@use "../../styles/mixins" as *;
+
+.viewMoreLink {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  text-decoration: underline;
+  color: var(--accent);
+  transition: color 0.3s, text-decoration-color 0.3s;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 3px;
+
+  &:focus-visible {
+    outline-offset: 1px;
+  }
+
+  @include hover {
+    text-decoration-color: transparent;
+    color: var(--accent-hover);
+  }
+
+  &:active {
+    text-decoration-color: transparent;
+    color: var(--accent-active);
+  }
+}

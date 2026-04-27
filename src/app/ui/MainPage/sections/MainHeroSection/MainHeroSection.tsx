@@ -14,12 +14,14 @@ export const MainHeroSection = () => {
 
   return (
     <section className={s.mainHero}>
-      <img
-        src="/hero-main-bg.png"
-        alt=""
-        aria-hidden="true"
-        className={s.backgroundImage}
-      />
+      <div className={s.backgroundWrap}>
+        <img
+          src="/hero-main-bg.png"
+          alt=""
+          aria-hidden="true"
+          className={s.backgroundImage}
+        />
+      </div>
       <div className="container">
         <div className={s.inner}>
           <h1 className={s.title}>Welcome</h1>
