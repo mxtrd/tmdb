@@ -5,6 +5,22 @@
   overflow: hidden;
 }
 
+.backgroundWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    border-radius: inherit;
+    background: linear-gradient(360deg, #1e1e1e 0%, rgba(30, 30, 30, 0) 100%);
+  }
+}
+
 .backgroundImage {
   position: absolute;
   inset: 0;
@@ -16,7 +32,7 @@
 
 .inner {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   padding-top: 100px;
   padding-bottom: 50px;
   min-height: 100vh;

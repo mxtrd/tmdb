@@ -1,0 +1,122 @@
+@use "../../../app/styles/mixins" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.media {
+  position: relative;
+  height: 270px;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @include hover {
+    .poster {
+      scale: 1.05;
+    }
+    .favoriteButton {
+      opacity: 1;
+      visibility: visible;
+      cursor: pointer;
+    }
+  }
+}
+
+.mediaLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  &:active {
+    .poster {
+      scale: 1;
+    }
+  }
+}
+
+.poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: scale 0.3s ease;
+}
+
+.rating {
+  z-index: 3;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+
+.ratingHigh {
+  background-color: var(--green-color);
+}
+
+.ratingMedium {
+  background-color: var(--yellow-color);
+}
+
+.ratingLow {
+  background-color: var(--red-color);
+}
+
+.favoriteButton {
+  @include btn-reset;
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: var(--bg-elevated);
+  color: var(--text-secondary);
+  opacity: 0;
+  visibility: hidden;
+  transition: background-color 0.3s, opacity 0.3s ease, visibility 0.3s ease;
+
+  @include hover {
+    background: var(--bg-elevated-hover);
+  }
+
+  &:active {
+    background: var(--bg-elevated-active);
+  }
+}
+
+.favoriteIcon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: currentcolor;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: var(--text-primary);
+}
+
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+}
